@@ -10,7 +10,7 @@ Plug 'posva/vim-vue'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'elzr/vim-json'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'mg979/vim-visual-multi'
+" Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
@@ -18,7 +18,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'franbach/miramare'
-Plug 'Yggdroot/indentLine'
 
 " Initialize plugin system
 call plug#end()
@@ -37,8 +36,6 @@ set number
 set linespace=8
 set ts=2 sw=2 sts=2
 set belloff=all
-set conceallevel=1
-listchars+=tab:|\ 
 
 let mapleader=","
 nmap <leader>so :source $HOME\_vimrc<CR>
@@ -51,9 +48,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-inoremap {<CR> {<CR>}<Esc>ko<tab>
-inoremap [<CR> [<CR>]<Esc>ko<tab>
-inoremap (<CR> (<CR>)<Esc>ko<tab>
+inoremap {<cr> {<cr>}<c-o><tab>	
+inoremap [<cr> [<cr>]<c-o><tab>	
+inoremap (<cr> (<cr>)<c-o><tab>
 
 if has("gui_running")
   if has("gui_gtk2")
