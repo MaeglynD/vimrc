@@ -14,22 +14,34 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'franbach/miramare'
+Plug 'Yggdroot/indentLine'
 
 " Initialize plugin system
 call plug#end()
 
+set termguicolors
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+let g:airline_theme = 'miramare'
+colorscheme miramare
+
 set clipboard=unnamed
 syntax on
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+"colorscheme onehalfdark
+"let g:airline_theme='onehalfdark'
 set number
-set linespace=6
+set linespace=8
 set ts=2 sw=2 sts=2
 set belloff=all
+set conceallevel=1
+listchars+=tab:|\ 
 
 let mapleader=","
 nmap <leader>so :source $HOME\_vimrc<CR>
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -39,9 +51,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-inoremap {<cr> {<cr>}<c-o><tab>
-inoremap [<cr> [<cr>]<c-o><tab>
-inoremap (<cr> (<cr>)<c-o><tab>
+inoremap {<CR> {<CR>}<Esc>ko<tab>
+inoremap [<CR> [<CR>]<Esc>ko<tab>
+inoremap (<CR> (<CR>)<Esc>ko<tab>
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -49,7 +61,7 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=Consolas:h10:cANSI
+    set guifont=Consolas::h9cANSI
     set guioptions=-m
     set guioptions=-T
     set guioptions=-r
