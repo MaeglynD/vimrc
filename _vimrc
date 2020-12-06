@@ -18,6 +18,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'franbach/miramare'
+Plug 'sheerun/vim-polyglot'
 
 " Initialize plugin system
 call plug#end()
@@ -26,7 +27,9 @@ set termguicolors
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
 let g:airline_theme = 'miramare'
+let g:miramare_cursor = 'blue'
 colorscheme miramare
+set guicursor+=a:blinkon0
 
 set clipboard=unnamed
 syntax on
